@@ -70,6 +70,7 @@ const createMultipleProductsService = async(req,res) =>{
 
 const updateProductService = async(req,res) =>{
     const product = req.body; // get the product details from the request body
+    product.modifiedAt = new Date();
     const {id} = req.params; // get the id of the product to be updated
     if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send("No product with that id"); // check if the id is valid
 

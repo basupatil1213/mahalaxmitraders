@@ -12,5 +12,11 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
-  }
+  },
+  "name": "mahalaxmitraders-backend",
+  "version": "1.0.0",
+  "description": "mahalxmi traders backend code",
+  "main": "server.js",
+  "author": "Basavaraj Patil",
+  "license": "ISC"
 }
