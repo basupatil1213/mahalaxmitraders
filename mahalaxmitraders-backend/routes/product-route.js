@@ -5,18 +5,21 @@ import {createProductController,
         updateProductController,
         createMultipleProductsController,
         getProductByIdController} from '../controllers/product-controller.js';
+
+import {adminAuthorizationMiddleware, authenticationMiddleware} from "../middlewares/authenticaiton.js";
+
 const productRouter = express.Router();
 
 productRouter.route('/')
-    .get(getAllProductsController)
-    .post(createProductController)
+    .get(getAllProductsController) // anyone can get all products
+    .post(authenticationMiddleware, adminAuthorizationMiddleware, createProductController)  // only admin can create a product
 
 productRouter.route('/create-multiple')
-    .post(createMultipleProductsController)
+    .post(authenticationMiddleware, adminAuthorizationMiddleware, createMultipleProductsController) // only admin can create multiple products
 
 productRouter.route('/:id')
     .get(getProductByIdController)
-    .delete(deleteProductController)
-    .patch(updateProductController)
+    .delete(authenticationMiddleware, adminAuthorizationMiddleware, deleteProductController) // only admin can delete a product
+    .patch(authenticationMiddleware, adminAuthorizationMiddleware, updateProductController) // only admin can update a product
 
 export default productRouter;

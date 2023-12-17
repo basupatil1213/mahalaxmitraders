@@ -4,9 +4,9 @@ import {loginController, registerController} from '../controllers/auth-controlle
 const authRouter = express.Router();
 
 authRouter.route('/login')
-    .post(loginController)
+    .post(loginController) // anyone can login
 
 authRouter.route('/register')
-    .post(registerController)
+    .post(registerController) // anyone can register
 
 export default authRouter;

@@ -1,9 +1,9 @@
-import {User, Auth} from "../models/index.js";
+import { User, Auth } from "../models/index.js";
 
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-// login service code
 
+// login service code
 export const loginService = async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -20,17 +20,21 @@ export const loginService = async (req, res) => {
         if (!isPasswordCorrect)
             return res.status(400).json({ message: "Invalid credentials" });
 
+        if (process.env.DEBUG)
+            console.log(`${JSON.stringify(existingUser)} from login service`);
         // generate token
         const token = jwt.sign(
-            { email: existingUser.email, id: existingUser._id },
+            { email: existingUser.email, id: existingUser._id, role: existingUser.role },
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
         );
 
-        res.status(200).json({ result: {
-            email: existingUser.email,
-            id: existingUser._id,
-        }, token });
+        res.status(200).json({
+            result: {
+                email: existingUser.email,
+                id: existingUser._id,
+            }, token
+        });
 
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -60,22 +64,24 @@ export const registerService = async (req, res) => {
 
 
         const result = await Auth.create({
-            userId : user._id,
+            userId: user._id,
             email,
             password: hashedPassword,
             name: `${firstName} ${lastName}`,
         });
 
         const token = jwt.sign(
-            { email: result.email, id: result._id },
+            { email: result.email, id: result._id, role: result.role },
             process.env.JWT_SECRET,
             { expiresIn: "1h" }
         );
 
-        res.status(200).json({ result: {
-            email: result.email,
-            id: result._id,
-        }, token });
+        res.status(200).json({
+            result: {
+                email: result.email,
+                id: result._id,
+            }, token
+        });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

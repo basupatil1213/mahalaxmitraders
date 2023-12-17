@@ -13,4 +13,7 @@ const port = process.env.PORT;
 
 initialize(app);
 
-app.listen(port, () => console.log(`Server is listening at port ${port}`));
+app.listen(port, () =>{ 
+    if(process.env.DEBUG)
+        console.log(`Server is listening at port ${port}`)
+});

@@ -20,6 +20,11 @@ const authSchema = new mongoose.Schema({
     token:{
         type: String,
     },
+    role:{
+        type:"String",
+        default: "customer",
+        enum: ["customer", "admin"],
+    },
 });
 
 const AuthModel = mongoose.model("Auth", authSchema);

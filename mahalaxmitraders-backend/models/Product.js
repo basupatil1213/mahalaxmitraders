@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 // Tiles Schema
 const productSchema = new mongoose.Schema({
     name :{
