@@ -1,22 +1,37 @@
 import { Product } from "../models/index.js";
 import mongoose from 'mongoose';
+import { paginationMiddleware } from "../middlewares/pagination.js";
 
 // mongoose queries to database for CRUD operations
 
-// get all products
-const getAllProductsService = async(req,res) =>{
+// get all products with pagination middleware
+const getAllProductsService = async (req,res) =>{
     try{
-        const products = await Product.find().exec();
-        if(!products) return res.status(404).json({message: "No products found"});
-        console.log(`${products} from service}`)
+        await paginationMiddleware(Product)(req, res);
+        const results = res.paginatedResults;
         res.status(200)
-            .json(products);
+            .json(results);
     } catch (error){
-        console.log(`${error.message} from service}`)
         res.status(404)
             .json({message: `${error.message} from service`});
     }
 }
+
+
+// // get all products
+// const getAllProductsService = async(req,res) =>{
+//     try{
+//         const products = await Product.find().exec();
+//         if(!products) return res.status(404).json({message: "No products found"});
+//         console.log(`${products} from service}`)
+//         res.status(200)
+//             .json(products);
+//     } catch (error){
+//         console.log(`${error.message} from service}`)
+//         res.status(404)
+//             .json({message: `${error.message} from service`});
+//     }
+// }
 
 // get product by id
 const getProductByIdService = async(req,res) =>{
