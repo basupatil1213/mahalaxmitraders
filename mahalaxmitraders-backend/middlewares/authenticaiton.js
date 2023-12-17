@@ -12,3 +12,14 @@ export const authenticationMiddleware = (req, res, next) => {
         res.status(400).json({ message: error.message });
     }
 }
+
+// middleware for authorization of admin
+
+export const adminAuthorizationMiddleware = (req, res, next) => {
+    try{
+        if (req.user.role !== "admin") return res.status(401).json({ message: "Unauthorized" });
+        next();
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+}
