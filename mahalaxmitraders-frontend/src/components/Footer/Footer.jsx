@@ -13,9 +13,9 @@ const Footer = () => {
                 <Grid container spacing={3}>
                     <Grid item xs className="items-center flex justify-center">
                         {/* logo */}
-                        <img src={logo} alt="" className="h-1/2" />
+                        <img src={logo} alt=""/>
                     </Grid>
-                    <Grid item xs={6} className=" flex  justify-around">
+                    <Grid item xs={6} className=" flex  gap-10 justify-center">
                         {/* Social media links (Facebook, Instagram, Gmail) */}
                         <div className="flex gap-2 items-center">
                             <InstagramIcon />
