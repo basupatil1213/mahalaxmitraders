@@ -18,15 +18,23 @@ module.exports = {
         'screen-90' : '90vh',
       },
       gridTemplateColumns:{
-        'navbar' : '10rem 1fr 2fr 1fr 10rem',
+        'navbar' : '5rem 1fr 2fr 1fr 5rem',
         'navbar-mobile' : '1fr 1fr 1fr',
         'navbar-tablet' : '5rem 1fr 1fr 1fr 5rem',
+        'footer': '5rem 1fr 2fr 1fr 5rem',
+        'footer-mobile': '1fr 1fr 1fr',
+        'footer-tablet': '2.5rem 1fr 2fr 1fr 2.5rem',
       },
       colors:{
         'primary' : "#000000",
         'secondary' : "#ffffff",
         'tertiary' : "#c9a067",
-      }
+      },
+      backgroundColor:{
+        'primary' : "#000000",
+        'secondary' : "#ffffff",
+        'tertiary' : "#c9a067",
+      },
     },
   },
   plugins: [],

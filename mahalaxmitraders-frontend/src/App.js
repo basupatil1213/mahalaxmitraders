@@ -11,9 +11,9 @@ function App() {
         {/* NavBar */}
         <NavBar />
         {/* Main Content */}
-        {/* <MahalaxmiRoutes /> This is where the magic happens */}
+        <MahalaxmiRoutes />
         {/* Footer */}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

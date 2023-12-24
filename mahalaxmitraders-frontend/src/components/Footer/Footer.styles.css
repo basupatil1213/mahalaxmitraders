@@ -1,0 +1,7 @@
+
+
+@media screen and (max-width: 640px) {
+    .shop-address{
+        height: min-content;
+    }
+}
