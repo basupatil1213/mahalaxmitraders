@@ -3,7 +3,31 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
-    extend: {},
+    extend: {
+      height:{
+        'screen-1/2': '50vh',
+        'screen-1/3': '33vh',
+        'screen-10' : '10vh',
+        'screen-20' : '20vh',
+        'screen-30' : '30vh',
+        'screen-40' : '40vh',
+        'screen-50' : '50vh',
+        'screen-60' : '60vh',
+        'screen-70' : '70vh', 
+        'screen-80' : '80vh',
+        'screen-90' : '90vh',
+      },
+      gridTemplateColumns:{
+        'navbar' : '10rem 1fr 2fr 1fr 10rem',
+        'navbar-mobile' : '1fr 1fr 1fr',
+        'navbar-tablet' : '5rem 1fr 1fr 1fr 5rem',
+      },
+      colors:{
+        'primary' : "#000000",
+        'secondary' : "#ffffff",
+        'tertiary' : "#c9a067",
+      }
+    },
   },
   plugins: [],
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],

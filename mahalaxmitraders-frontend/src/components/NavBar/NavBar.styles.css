@@ -1,0 +1,71 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --tertiary-color: #c9a067;
+}
+
+.navbar ul li a:hover {
+    border-bottom: 1px solid #000;
+    transition: all 0.2s ease-in;
+    color: var(--tertiary-color);
+}
+
+.mobile__hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 640px) {
+    nav {
+        grid-template-columns: 1rem repeat(3, 1fr) 1rem;
+    }
+
+    .navbar__links {
+        display: none;
+    }
+
+    .mobile__hamburger {
+        display: block;
+        cursor: pointer;
+        grid-row: 1;
+        grid-column: 3/4;
+    }
+
+    .mobile__hamburger__icon {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .mobile__hamburger__icon:hover {
+        color: var(--tertiary-color);
+    }
+
+    .mobile__hamburger__icon:focus {
+        outline: none;
+    }
+
+    .mobile__hamburger__icon:active {
+        color: var(--tertiary-color);
+    }
+
+    .mobile__nav__links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        font-size: 1.5rem;
+        top: 10vh;
+        left: 2.5vh;
+        width: 90vw;
+        height: 50vh;
+        background-color: var(--secondary-color);
+        z-index: 999;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobile__nav__links li a:active {
+        border-bottom: 1px solid #000;
+        transition: all 0.2s ease-in;
+        color: var(--tertiary-color);
+    }
+}
+
+/* Path: mahalaxmitraders-frontend/src/components/NavBar/NavBar.styles.css */

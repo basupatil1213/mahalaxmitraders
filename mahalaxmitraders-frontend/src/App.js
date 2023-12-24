@@ -1,15 +1,19 @@
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import MahalaxmiRoutes from './routes/MahalaxmiRoutes';
+import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        {/* Header */}
+        {/* NavBar */}
+        <NavBar />
         {/* Main Content */}
-        <MahalaxmiRoutes /> {/* This is where the magic happens */}
+        {/* <MahalaxmiRoutes /> This is where the magic happens */}
         {/* Footer */}
+        {/* <Footer /> */}
       </div>
     </Router>
   );

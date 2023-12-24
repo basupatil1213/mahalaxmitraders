@@ -43,7 +43,7 @@ const Footer = () => {
                 </Grid>
                 <div className="flex justify-center">
                     {/* Copy right */}
-                    <p>Designed and Developed By Basavaraj Patil</p>
+                    <p>&copy; Designed and Developed By Basavaraj Patil</p>
                 </div>
             </Box>
         </div>
