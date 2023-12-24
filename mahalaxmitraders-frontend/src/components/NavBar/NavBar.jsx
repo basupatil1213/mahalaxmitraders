@@ -36,7 +36,7 @@ const NavBar = () => {
                     {/* login */}
                     <ul className="">
                         <li>
-                            <a href="/login" className="text-2xl md:text-base">Login</a>
+                            <a href="/login" className="">Login</a>
                         </li>
                     </ul>
                     <div className="mobile__hamburger hover:cursor-pointer" onClick={handleMenuToggle}>

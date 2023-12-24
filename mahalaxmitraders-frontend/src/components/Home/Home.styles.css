@@ -1,0 +1,10 @@
+
+@media screen and (max-width: 1024px) {
+    .hero-section{
+        background-image: url('./resources/images/hero-image.png');
+        background-size: cover;
+        background-repeat: repeat;
+        font-weight: bolder;
+    }
+    
+}

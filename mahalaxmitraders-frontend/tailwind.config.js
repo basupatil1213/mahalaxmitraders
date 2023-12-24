@@ -25,6 +25,9 @@ module.exports = {
         'footer-mobile': '1fr 1fr 1fr',
         'footer-tablet': '2.5rem 1fr 2fr 1fr 2.5rem',
       },
+      gridTemplateRows:{
+        'footer-mobile': 'fit-content fit-content fit-content', 
+      },
       colors:{
         'primary' : "#000000",
         'secondary' : "#ffffff",
@@ -34,6 +37,11 @@ module.exports = {
         'primary' : "#000000",
         'secondary' : "#ffffff",
         'tertiary' : "#c9a067",
+      },
+      fontFamily: {
+        'primary': ['Roboto', 'sans-serif'],
+        'secondary': ['Montserrat', 'sans-serif'],
+        'tertiary': ['Sevillana', 'sans-serif'],
       },
     },
   },

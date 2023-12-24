@@ -1,10 +1,10 @@
 import React from 'react'
-
+import Home from '../../components/Home/Home'
 const HomePage = () => {
   return (
-    <div className="h-screen">
-      <h1>HomePage</h1>
-    </div>
+    <>
+        <Home />
+    </>
   )
 }
 
