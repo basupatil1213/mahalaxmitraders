@@ -213,7 +213,7 @@ const ProductGrid = () => {
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {products ? products.map((product, index) => (
                             <Grid xs={2} sm={4} md={4} key={index} className="">
-                                <Item className="h-full md:h-[30rem] min-h-[15rem]">
+                                <Item className="h-full md:h-[30rem] min-h-[15rem] cursor-pointer">
                                     <img src={product.img} alt="" className="h-[80%] w-full object-cover" />
                                     <p>{product.category}</p>
                                     <p>{product.name}</p>
