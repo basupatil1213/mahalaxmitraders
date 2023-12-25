@@ -42,6 +42,7 @@ module.exports = {
         'primary': ['Roboto', 'sans-serif'],
         'secondary': ['Montserrat', 'sans-serif'],
         'tertiary': ['Sevillana', 'sans-serif'],
+        'italic-ibm': ['IBM Plex Sans', 'sans-serif'],
       },
     },
   },

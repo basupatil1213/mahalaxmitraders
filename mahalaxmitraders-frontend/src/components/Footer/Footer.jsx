@@ -7,7 +7,7 @@ import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
 const Footer = () => {
     return (
         <div>
-            <div style={{ flexGrow: 1, paddingBottom:'5rem', height:'fit-content' }}>
+            <div style={{ flexGrow: 1, paddingBottom:'1rem', height:'fit-content' }}>
                 <div className="grid grid-cols-1 grid-rows-footer-mobile gap-16 md:gap-0 md:grid-cols-footer md:grid-rows-1 h-fit md:h-full" >
                     <div className="items-center md:items-start justify-center flex col-start-1 md:justify-start md:col-start-2">
                         {/* logo */}
@@ -15,15 +15,15 @@ const Footer = () => {
                     </div>
                         {/* Social media links (Facebook, Instagram, Gmail) */}
                         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-0 pt-10 md:pt-0 md:justify-around w-full mx-0 md:mx-10 h-fit md:h-full">
-                        <a href='/' className="flex gap-2 items-center">
+                        <a href='/' className="flex gap-2 pb-1 border-primary hover:border-b">
                             <InstagramIcon />
                             <p>Instagram</p>
                         </a>
-                        <a href='/' className="flex gap-2 items-center">
+                        <a href='/' className="flex gap-2 items-center pb-1 border-primary hover:border-b">
                             <FacebookIcon />
                             <p>Facebook</p>
                         </a>
-                        <a href='/' className="flex gap-2 items-center">
+                        <a href='/' className="flex gap-2 items-center pb-1 border-primary hover:border-b">
                             <EmailRoundedIcon />
                             <p>Gmail</p>
                         </a>

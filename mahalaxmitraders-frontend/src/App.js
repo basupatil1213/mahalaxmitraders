@@ -9,11 +9,16 @@ function App() {
     <Router>
       <div className="App">
         {/* NavBar */}
-        <NavBar />
+        <div className="sticky top-0 z-20 bg-secondary">
+          <NavBar />
+        </div>
         {/* Main Content */}
-        <MahalaxmiRoutes />
+        <div>
+          <MahalaxmiRoutes />
+        </div>
         {/* Footer */}
-        <Footer />
+        <div><Footer />
+        </div>
       </div>
     </Router>
   );
