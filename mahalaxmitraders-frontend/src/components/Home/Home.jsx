@@ -159,14 +159,14 @@ const Home = () => {
             {/* About Owner */}
             <section>
                 <div>
-                    <h1 className="sm:text-2xl md:text-4xl font-primary font-bold text-center">About Owner</h1>
+                    <h1 className="sm:text-2xl md:text-4xl font-primary font-bold text-center sm:mb-5 md:mb-0">About Owner</h1>
                 </div>
-                <div className="flex flex-col-reverse lg:flex-row justify-around items-center sm:gap-0 lg:gap-20 h-[80vh] mx-20 mb-10 md:mb-20">
-                    <div className="owner-detail flex flex-col">
-                        <h1 className="sm:text-5xl md:text-7xl lg:text-9xl font-primary font-bold">Arun <br />Muddennavar</h1>
+                <div className="flex flex-col-reverse lg:flex-row justify-around items-center gap-10 lg:gap-20  mx-20 mb-10 md:mb-20 md:mt-10">
+                    <div className="owner-detail flex flex-col  gap-5 w-auto md:w-2/4">
+                        <h1 className="text-3xl md:text-7xl lg:text-7xl font-primary">Arun <br />Muddennavar</h1>
                         <p className="text-2xl font-tertiary">Passionate owner dedicated to providing a curated selection of high-quality and stylish tiles for every customer's unique needs.</p>
                     </div>
-                    <div className="owner-image shadow-2xl">
+                    <div className="owner-image shadow-2xl sm:w-auto md:w-1/3">
                         <img src={ownerImg} alt="Owner" className="" />
                     </div>
                 </div>
