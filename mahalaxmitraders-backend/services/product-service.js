@@ -18,23 +18,6 @@ const getAllProductsService = async (req, res) => {
 }
 
 
-// // get all products
-// const getAllProductsService = async(req,res) =>{
-//     try{
-//         const products = await Product.find().exec();
-//         if(!products) return res.status(404).json({message: "No products found"});
-//         if(process.env.DEBUG)
-// console.log(`${products} from service}`)
-//         res.status(200)
-//             .json(products);
-//     } catch (error){
-//         if(process.env.DEBUG)
-// console.log(`${error.message} from service}`)
-//         res.status(404)
-//             .json({message: `${error.message} from service`});
-//     }
-// }
-
 // get product by id
 const getProductByIdService = async (req, res) => {
     const { id } = req.params; // get the id of the product to be deleted

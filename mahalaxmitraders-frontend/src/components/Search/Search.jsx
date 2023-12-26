@@ -1,5 +1,8 @@
 import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
+import { getProductsBySearchAndFilters } from '../../services/ProductServices/ProductServices';
+import {useDispatch} from 'react-redux';
+import { setSearchTerm, setFilters as setStoreFilters } from '../../store/slices/product-slice';
 
 
 const sampleTilesCatergoryFilters = [
@@ -9,23 +12,16 @@ const sampleTilesCatergoryFilters = [
     'Bathroom Fittings',
     'Bathroom Accessories',
     'Kitchen Sinks',
-    'Kitchen Chimney'];
+    'Kitchen Chimney',
+    'Electronics'];
 
 const Search = () => {
 
     const [catergoryFilters, setCatergoryFilters] = React.useState(sampleTilesCatergoryFilters);
     const [filters, setFilters] = React.useState([]);
-    const [searchTerm, setSearchTerm] = React.useState('');
+    const [localsearchTerm, setlocalSearchTerm] = React.useState('');
 
-    // React.useEffect(() => {
-    //     // fetch('http://localhost:5000/api/v1/category')
-    //     // .then(res => res.json())
-    //     // .then(data => {
-    //     //     setCatergoryFilters(data);
-    //     // })
-    //     // .catch(err => console.log(err));
-    // }
-    // , []);
+    const dispatch = useDispatch();
 
     const handleFilterClick = (e) => {
         const filter = e.target.textContent;
@@ -40,21 +36,22 @@ const Search = () => {
         }
     }
 
-    const handleSearchClick = () => {
+    const handleSearchClick = async () => {
         // Search using searchTerm and filters
-        fetch(`http://localhost:5000/api/v1/product?search=${searchTerm}&category=${filters.join(',')}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(err => console.log(err));
+        dispatch(setSearchTerm(localsearchTerm));
+        const filtersString = filters.join(',');
+        dispatch(setStoreFilters(filtersString));
+    }
+
+    const handleSearchTermChange = (e) => {
+        setlocalSearchTerm(e.target.value);
     }
 
   return (
     <>
       <section>
         <div className="searchbar flex gap-8 pb-10">
-            <input type="text" placeholder="Search" value={searchTerm} className="border p-3 rounded-md md:w-[60vh]"/>
+            <input type="text" placeholder="Search" value={localsearchTerm} className="border p-3 rounded-md md:w-[60vh]" onChange={handleSearchTermChange}/>
             <button type="submit" className="btn btn-primary bg-primary px-5 text-center rounded-lg" onClick={handleSearchClick}><SearchIcon className="text-secondary"/></button>
         </div>
       </section>
